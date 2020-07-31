@@ -21,7 +21,9 @@
 
 <div style="margin-left: 50px; margin-top: 50px">
 
-	<button title="Refresh" on:click="{generate}">
+	<h1><a href="https://github.com/jojopad/namer">Namer</a></h1>
+
+	<button title="Refresh" on:click="{generate}">Refresh
 		<span class="jam jam-refresh-reverse"></span>
 	</button>
 
