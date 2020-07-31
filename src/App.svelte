@@ -3,7 +3,7 @@
 	import Copy from './Copy.svelte'
 	import { onMount } from 'svelte';
 
-	let chance = new Chance()
+	let chance = new Chance();
 	let company, name, firstName, lastName, email, guid, hash;
 
 	function generate() {
@@ -16,20 +16,18 @@
 		hash = chance.hash();
 	}
 
-	function copy(value) {
-		navigator.clipboard.writeText(value);
-	}
-
 	onMount(async () => generate());
 </script>
 
 <div style="margin-left: 50px; margin-top: 50px">
-	<button on:click="{generate}">Generate</button>
+
+	<button title="Refresh" on:click="{generate}">
+		<span class="jam jam-refresh-reverse"></span>
+	</button>
 
 	<h3>Company</h3>
 	<Copy value="{company}"/>
 	<span>{company}</span>
-
 
 	<h3>First Name</h3>
 	<Copy value="{firstName}"/>
@@ -50,4 +48,5 @@
 	<h3>Hash</h3>
 	<Copy value="{hash}"/>
 	<span>{hash}</span>
+
 </div>
